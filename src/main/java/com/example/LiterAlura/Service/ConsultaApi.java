@@ -12,20 +12,16 @@ import java.net.http.HttpResponse;
 @Service
 public class ConsultaApi {
 
-    public String llamadaApi() throws IOException, InterruptedException {
+    public String busquedaPorAutor(String URL) throws IOException, InterruptedException {
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://gutendex.com/books/?search=dickens"))
+                .uri(URI.create(URL))
                 .build();
         HttpResponse<String> response = client
                 .send(request, HttpResponse.BodyHandlers.ofString());
 
         return response.body();
     }
-
-
-
-
 
 }

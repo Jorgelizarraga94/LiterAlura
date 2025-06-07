@@ -1,21 +1,20 @@
 package com.example.LiterAlura.Service;
 
-import com.example.LiterAlura.Model.DatosLibros;
-import com.example.LiterAlura.Model.ResultadoDatos;
+import com.example.LiterAlura.Model.ListaDeLibros;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.Data;
 
-import static com.example.LiterAlura.Model.ResultadoDatos.resultado;
-
+@Data
 public class ConversorDatos implements IconversorDatos{
-    public ObjectMapper objectMapper = new ObjectMapper();
 
     @Override
     public <T> T obtenerDatos(String json, Class<T> clase) {
+        ObjectMapper mapper = new ObjectMapper();
         try {
-            return objectMapper.readValue(json, clase);
+            return mapper.readValue(json, clase);
         } catch (JsonProcessingException e) {
-            throw new RuntimeException("Error al deserializar JSON", e);
+            throw new RuntimeException(e);
         }
     }
 }
