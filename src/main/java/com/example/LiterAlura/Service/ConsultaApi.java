@@ -1,7 +1,5 @@
 package com.example.LiterAlura.Service;
 
-import com.example.LiterAlura.Model.DatosLibros;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -13,7 +11,6 @@ import java.net.http.HttpResponse;
 public class ConsultaApi {
 
     public String busquedaPorAutor(String URL) throws IOException, InterruptedException {
-
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(URL))
@@ -23,5 +20,4 @@ public class ConsultaApi {
 
         return response.body();
     }
-
 }

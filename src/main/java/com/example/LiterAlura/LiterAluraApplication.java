@@ -1,29 +1,25 @@
 package com.example.LiterAlura;
 
-
-import com.example.LiterAlura.Model.DatosLibros;
-import com.example.LiterAlura.Model.ListaDeLibros;
 import com.example.LiterAlura.Principal.Principal;
-import com.example.LiterAlura.Service.ConsultaApi;
-import com.example.LiterAlura.Service.ConversorDatos;
-import com.example.LiterAlura.Service.IconversorDatos;
+import com.example.LiterAlura.Repository.ILibrosRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 import java.io.IOException;
-import java.util.Scanner;
 
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
+@SpringBootApplication
 public class LiterAluraApplication implements CommandLineRunner {
+	@Autowired
+	private ILibrosRepository librosRepository;
 	public static void main(String[] args) throws IOException, InterruptedException {
 		SpringApplication.run(LiterAluraApplication.class, args);
     }
 
 	@Override
 	public void run(String... args) throws Exception {
-		Principal principal = new Principal();
+		Principal principal = new Principal(librosRepository);
 		principal.mostrarMenu();
 	}
 }
