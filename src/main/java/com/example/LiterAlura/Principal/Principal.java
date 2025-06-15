@@ -73,14 +73,13 @@ public class Principal {
                 }
             }
         }
-        if(libroNoExistente && datos.getLibros().get(0).getAnioDeNacimiento() != null && datos.getLibros().get(0).getAnioDeFallecimiento() != null){
+        if(libroNoExistente){
             librosRepositorio.save(datos.getLibros().get(0));
             System.out.println(datos.getLibros().get(0).toString());
         }
         else{
             System.out.println("No se puede cargar el libro por que algun campo es nulo");
         }
-
     }
 
     private void HistorialLibrosRegistrados() {

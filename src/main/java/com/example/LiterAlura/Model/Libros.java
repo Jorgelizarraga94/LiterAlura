@@ -9,6 +9,7 @@ import java.util.Map;
 
 @Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
+@Table(name = "libros")
 public class Libros {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
