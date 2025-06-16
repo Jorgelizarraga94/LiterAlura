@@ -41,11 +41,11 @@ Desde la consola, el usuario puede interactuar con el sistema mediante el siguie
 
 ---
 
-##🌐 Fuente de datos
+## 🌐 Fuente de datos
 
 Este proyecto utiliza la Gutendex API para obtener información pública y gratuita sobre libros del Proyecto Gutenberg.
 
-##🧠 Aprendizajes
+## 🧠 Aprendizajes
 
 Este proyecto me permitió reforzar y aplicar conocimientos de:
 
