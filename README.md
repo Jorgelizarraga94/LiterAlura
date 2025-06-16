@@ -41,11 +41,11 @@ Desde la consola, el usuario puede interactuar con el sistema mediante el siguie
 
 ---
 
-🌐 Fuente de datos
+##🌐 Fuente de datos
 
 Este proyecto utiliza la Gutendex API para obtener información pública y gratuita sobre libros del Proyecto Gutenberg.
 
-🧠 Aprendizajes
+##🧠 Aprendizajes
 
 Este proyecto me permitió reforzar y aplicar conocimientos de:
 
@@ -67,15 +67,15 @@ git clone https://github.com/Jorgelizarraga94/LiterAlura.git
 ### 2. Configurar el archivo application.properties
 
 #-----------------------MYSQL-----------------------
-#spring.jpa.hibernate.ddl-auto=update
+spring.jpa.hibernate.ddl-auto=update
 
-#spring.datasource.url=jdbc:mysql://localhost:3306/literalura?useSSL=false&serverTimezone=UTC
+spring.datasource.url=jdbc:mysql://localhost:3306/literalura?useSSL=false&serverTimezone=UTC
 
-#spring.datasource.username=${DB_USERNAME}
+spring.datasource.username=${DB_USERNAME}
 
-#spring.datasource.password=${DB_PASSWORD}
+spring.datasource.password=${DB_PASSWORD}
 
-#spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
 
 #-----------------------POSTGRES--------------------
 
@@ -91,7 +91,7 @@ hibernate.dialect=org.hibernate.dialect.HSQLDialect
 
 spring.jpa.hibernate.ddl-auto=update
 
-### 3. Ejecutar la aplicación
+## 3. Ejecutar la aplicación
 
 ✍️ Autor
 Lizarraga Jorge
