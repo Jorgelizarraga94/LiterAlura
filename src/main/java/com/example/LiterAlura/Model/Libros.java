@@ -47,21 +47,11 @@ public class Libros {
         }
     }
 
-    /*public long getId() {
-        return idBd;
-    }
-
-    public void setId(Long id) {
-        this.idBd = id;
-    }*/
 
     public String getTitulo() {
         return titulo;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
 
     public List<Map<String, Object>> getAutor() {
         return autor;

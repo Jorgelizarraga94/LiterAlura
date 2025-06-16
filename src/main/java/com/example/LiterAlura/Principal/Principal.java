@@ -20,7 +20,7 @@ public class Principal {
     public Principal(ILibrosRepository librosRepository) {
         this.librosRepositorio = librosRepository;
     }
-
+    //MENU DE INTERACCIÓN CON EL USUARIO
     public void mostrarMenu() throws IOException, InterruptedException {
         int opcion = -1;
         while(opcion != 0){
@@ -83,30 +83,50 @@ public class Principal {
     }
 
     private void HistorialLibrosRegistrados() {
-        for (Libros historialLibro : librosRepositorio.librosRegistrados()) {
-            System.out.println(historialLibro.toString());
+        if(!librosRepositorio.librosRegistrados().isEmpty()){
+            for (Libros historialLibro : librosRepositorio.librosRegistrados()) {
+                System.out.println(historialLibro.toString());
+            }
+        }else{
+            System.out.println("No se encuentran libros registrados en nuestra base de datos");
         }
     }
 
     private void HistorialAutoresRegistrados(){
-        for(Autor historialAutores : librosRepositorio.AutoresRegistrados()){
-            System.out.println(historialAutores.HistorialAutores());
+        if(!librosRepositorio.AutoresRegistrados().isEmpty()){
+            for(Autor historialAutores : librosRepositorio.AutoresRegistrados()){
+                System.out.println(historialAutores.HistorialAutores());
+            }
+        }else{
+            System.out.println("No se encuentras Autores registrados en nuestra base de datos");
         }
     }
+
     private void AutoresVivosEnDeterminadoAnio(){
         System.out.println("Ingrese un determinado año: ");
         Scanner scanner = new Scanner(System.in);
         int anio = scanner.nextInt();
-        for (Autor autor : librosRepositorio.AutoresMayoresA(anio)){
-            System.out.println(autor.HistorialAutores());
+        if(!librosRepositorio.AutoresMayoresA(anio).isEmpty()){
+            for (Autor autor : librosRepositorio.AutoresMayoresA(anio)){
+                System.out.println(autor.HistorialAutores());
+            }
+        }
+        else {
+            System.out.println("no existen autores vivos registrados en el año " + anio);
         }
     }
+
     private void LibrosPorIdioma(){
         System.out.println("Ingrese las siglas del idioma: -en : English , -es : Español");
         Scanner scanner = new Scanner(System.in);
         String siglas = scanner.nextLine();
-        for (Libros libro : librosRepositorio.LibrosPorIdioma(siglas)){
-            System.out.println(libro.toString());
+        if(!librosRepositorio.LibrosPorIdioma(siglas).isEmpty()){
+            for (Libros libro : librosRepositorio.LibrosPorIdioma(siglas)){
+                System.out.println(libro.toString());
+            }
+        }
+        else{
+            System.out.println("No hay libros registrados en el idioma " + siglas);
         }
     }
 }
