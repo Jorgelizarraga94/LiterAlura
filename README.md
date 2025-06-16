@@ -11,10 +11,15 @@ Se trata de una aplicación de consola escrita en **Java 17** que permite buscar
 Desde la consola, el usuario puede interactuar con el sistema mediante el siguiente menú:
 
 1 - Buscar libro
+
 2 - Listar libros registrados
+
 3 - Listar autores registrados
+
 4 - Listar autores vivos en un determinado año
+
 5 - Listar libros por idioma
+
 0 - Salir
 
 ---
@@ -94,8 +99,12 @@ spring.jpa.hibernate.ddl-auto=update
 ## 3. Ejecutar la aplicación
 
 ✍️ Autor
+
 Lizarraga Jorge
+
 Desarrollador Java | Programa Oracle Next Education
+
 LinkedIn : https://www.linkedin.com/in/jorge-lizarraga-developer/
+
 GitHub : https://github.com/Jorgelizarraga94
 
